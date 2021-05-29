@@ -53,7 +53,7 @@ The  estimated value of action a at the time step t is $Q_t(a)$
 
 ## Finite Markov Decision Process
 
-* 
+
 
 
 
@@ -117,3 +117,60 @@ The  estimated value of action a at the time step t is $Q_t(a)$
 
 * In reinforcement learning we are very much concerned with cases in
   which optimal solutions cannot be found but must be approximated in some way.
+
+## Temporal-Difference Learning
+
+* Like Dynamic Programming, TD methods update estimates based in part on other learned estimates, without waiting for a final outcome.
+
+* Monte Carlo methods wait until the return following the visit is known, then use that return as a target for $V(S_t)$
+  $$
+  V(S_t) <- V(S_t) + \alpha [G_t - V(S_t)]
+  $$
+  where $G_T$ is the actual return following time t and $\alpha$ is a constant step-size parameter.
+
+* Whereas Monte Carlo methods must wait until end of the episode to determine the increment to V(S_t), TD methods wait only until the next time step.
+
+$$
+V(S_t) < - V(S_t) + \alpha [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]
+$$
+
+This is TD(0) or one-step TD, because it is a special case of the TD($\lambda$)
+
+* If the array V does not change during the episode (as it does not in Monte Carlo methods), then the Monte Carlo error can be written as a sum of TD errors.
+  $$
+  G_t - V(S_t) = \sum^{T-1}_{k=t} \gamma^{k-1} \delta_k
+  $$
+
+* This identity is not exact if V is updated during the episode (as it is in TD(0) ), but if the step sixe is small then it may still hold approximately.
+
+**Q: -**If V changes during the episode, then (6.6) only holds approximately; what
+would the di↵erence be between the two sides? Let V t denote the array of state values
+used at time t in the TD error (6.5) and in the TD update (6.2). Redo the derivation
+above to determine the additional amount that must be added to the sum of TD errors
+in order to equal the Monte Carlo error.
+
+![Exercise 6.1](https://github.com/Xingtao/ReinforceLearningIntro/raw/master/solutions/chapter6/figures/exercise_6-1.png)
+
+## Sarsa Learning : On-policy TD control
+
+* In Sarsa learning we learn an action-value function rather than a state-value function.
+
+  * For an on-policy method we must estimate $q_{\pi}(s,a)$ for the current behaviour policy $\pi$ and for all states s and action a. This can be done using essentially the same TD method described above for learning $v_\pi$ 
+
+  $$
+  Q(S_t,A_t) <- Q(S_t,A_t) + \alpha [R_{t+1} + \gamma Q(S_{t+1},A_{t+1} - Q(S_t, A_t))]
+  $$
+
+  The name SARSA has been derived from the quintuple  $(S_t , A_t , R_{t+1} , S_{t+1} , A_{t+1} )$
+
+* In Monte Carlo method sometimes termination won't be guaranteed for all policies. If a policy was ever found that caused the agent to stay in the same state, then the next episode would never end. Online learning methods such as Sarsa do not have this problem because they quickly learn during methods such as Sarsa do not have this problem because they quickly learn during the episode than such policies are poor, and switch to something else.
+
+## Q learning : Off-policy TD control
+
+* In this case, the learned action-value function, Q, directly approximates $q_{*}$, the optimal action-value function, independent of the policy being followed.
+* The policy still has an effect in that it determines which state-action pairs are visited and updated
+
+* Q-learning is called off-policy because the updated policy is different from the behavior policy, so Q-Learning is off-policy. In other words, it estimates the reward for future actions and appends a value to the new state without actually following any greedy policy.
+
+  [Ex 6.12](https://ai.stackexchange.com/questions/21044/are-q-learning-and-sarsa-the-same-when-action-selection-is-greedy/21070)
+
