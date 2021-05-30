@@ -13,3 +13,6 @@
 * Intro to deep Q-learning and experience replay (hope this'll give more clarity about the project flow) - [Blog on Intro to Deep Q-learning](https://www.analyticsvidhya.com/blog/2019/04/introduction-deep-q-learning-python/)
 * PacMan environment - [Gym PacMan](https://gym.openai.com/envs/MsPacman-v0/), [Gym Docs for visualization](https://gym.openai.com/docs/)
 * Video lectures (optional) - [Deepmind 2015 by David Silver](https://www.youtube.com/watch?v=2pWv7GOvuf0&list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ)
+
+**May 31st**
+* Start coding for the network! More details in the meet :)
