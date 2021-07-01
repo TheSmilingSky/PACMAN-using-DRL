@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 from matplotlib import colors
 import numpy as np
+import sys
 
 up,right,down,left = 0,1,2,3
 grid_size = 10
-init_state = (0,0)
 
 class Gridworld:
 
@@ -22,7 +22,6 @@ class Gridworld:
             next_state = tuple(a + b for a,b in zip(state,(0,1)))
         else:
             next_state = tuple(a - b for a,b in zip(state,(0,1)))
-
         return self.rewards[next_state] , next_state
 
 class Agent:
@@ -34,28 +33,37 @@ class Agent:
         self.Q = np.zeros((grid_size,grid_size,4))
         self.V = np.zeros((grid_size,grid_size))
         self.pi = np.ones((grid_size,grid_size,4))
-        # self.locked_block = 
         self.initialize_policy()
+        self.initialize_Q()
+
+    def initialize_Q(self):
+        self.Q[:,grid_size-1,right] = -sys.maxsize - 1
+        self.Q[:,0,left] = -sys.maxsize - 1
+        self.Q[0,:,up] = -sys.maxsize - 1
+        self.Q[grid_size-1,:,down] = -sys.maxsize - 1    
 
     def initialize_policy(self):
         self.pi[:,grid_size-1,right] = 0
         self.pi[:,0,left] = 0
         self.pi[0,:,up] = 0
         self.pi[grid_size-1,:,down] = 0
+        # print(self.pi[0,0])
 
     def update_V(self,state,reward,new_state):
-        self.V[state] += self.alpha*(reward + self.gamma*self.V[new_state] - self.V[state])
+        self.V[state] = self.V[state] + self.alpha*(reward + self.gamma*self.V[new_state] - self.V[state])
 
     def update_pi(self,state):
         self.pi[state] = 0
-        self.pi[state,np.flatnonzero(self.Q[state].max() == self.Q[state])] = 1
+        self.pi[state][np.flatnonzero(self.Q[state] == self.Q[state].max())] = 1
 
     def update_Q(self,state,action,reward,new_state,next_action):
-        self.Q[state,action] += self.alpha*(reward + self.gamma*self.Q[new_state,next_action] - self.Q[state,action])        
+        # print(action.shape)
+        self.Q[state][action] = self.Q[state][action] + self.alpha*(reward + self.gamma*self.Q[new_state][next_action] - self.Q[state][action])        
 
     def get_action(self,state):
         # Epsilon-greedy policy
         if np.random.random() < self.eps: #explore
+            # print('explore')
             if state == (0,0):
                 return np.random.choice([right,down])
             elif state == (grid_size-1,0):
@@ -75,7 +83,22 @@ class Agent:
             else:
                 return np.random.randint(4) # np.random.random(x) generates a random number from 0 to n-1 
         else: #exploit
-            np.random.choice(np.flatnonzero(self.pi[state] == 1))
+            # print('exploit')
+            # print(self.pi[state])
+            return np.random.choice(np.flatnonzero(self.pi[state] == 1))
+
+def plot(data):
+    # create discrete colormap
+    _ , ax = plt.subplots()
+    ax.imshow(data)
+
+    # draw gridlines
+    ax.grid(which='major', axis='both', linestyle='-', color='k', linewidth=1)
+    ax.set_xticks(np.arange(-0.5, 10, 1));
+    ax.set_yticks(np.arange(-0.5, 10, 1));
+    ax.set_yticklabels([])
+    ax.set_xticklabels([])
+    plt.show()
 
 # start the grid-world experiment
 def experiment(rewards,N_episodes,alpha,eps,gamma):
@@ -86,6 +109,7 @@ def experiment(rewards,N_episodes,alpha,eps,gamma):
             print("[Experiment {}/{}] ".format(episode + 1, N_episodes))
         state = env.init_state
         action = agent.get_action(state)
+        # print(state,action)
         while(state != env.terminal_state):
             reward, new_state = env.step(state,action)
             next_action = agent.get_action(new_state)
@@ -93,7 +117,8 @@ def experiment(rewards,N_episodes,alpha,eps,gamma):
             agent.update_Q(state,action,reward,new_state,next_action)
             agent.update_pi(state)
             state, action = new_state, next_action
-    print(agent.V)
+            # print(state,action)
+    plot(agent.V)
 
 
 Erewards = np.zeros((grid_size,grid_size))
