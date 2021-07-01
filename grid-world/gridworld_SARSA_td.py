@@ -53,6 +53,7 @@ class Agent:
         self.Q[2:8,5,left] = -sys.maxsize - 1
         self.Q[1,6:9,down] = -sys.maxsize - 1
         self.Q[3,6:9,up] = -sys.maxsize - 1
+        self.Q[3:8,5,left] = -sys.maxsize - 1
         self.Q[2,5,right] = -sys.maxsize - 1
         self.Q[2,9,left] = -sys.maxsize - 1
 
@@ -70,6 +71,7 @@ class Agent:
         self.pi[2:8,5,left] = 0
         self.pi[1,6:9,down] = 0
         self.pi[3,6:9,up] = 0
+        self.pi[3:8,5,left] = 0
         self.pi[2,5,right] = 0
         self.pi[2,9,left] = 0
         # print(self.pi[0,0])
@@ -128,6 +130,8 @@ class Agent:
                 return np.random.choice([down,up])
             elif state[0] == 1 and state[1] in range(6,9):
                 return np.random.choice([right,left,up])
+            elif state[0] in range(3,8) and state[1] == 5:
+                return np.random.choice([right,up,down])
             elif state[0] == 3 and state[1] in range(6,9):
                 return np.random.choice([right,left,down])
             else:
@@ -164,6 +168,8 @@ def plot(data,policy,state):
     ax.set_yticks(np.arange(-0.5, 10, 1));
     ax.set_yticklabels([])
     ax.set_xticklabels([])
+    output_dir = os.path.join(os.getcwd(), "output_grid_world")
+    if not os.path.exists(output_dir): os.mkdir(output_dir)
     plt.savefig(os.path.join(output_dir, "grid_world_SARSA.jpg"), bbox_inches="tight")
     plt.show()
 
