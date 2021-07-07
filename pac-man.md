@@ -168,9 +168,14 @@ in order to equal the Monte Carlo error.
 ## Q learning : Off-policy TD control
 
 * In this case, the learned action-value function, Q, directly approximates $q_{*}$, the optimal action-value function, independent of the policy being followed.
+
 * The policy still has an effect in that it determines which state-action pairs are visited and updated
 
 * Q-learning is called off-policy because the updated policy is different from the behavior policy, so Q-Learning is off-policy. In other words, it estimates the reward for future actions and appends a value to the new state without actually following any greedy policy.
 
   [Ex 6.12](https://ai.stackexchange.com/questions/21044/are-q-learning-and-sarsa-the-same-when-action-selection-is-greedy/21070)
+
+## [Gym Tutorial](https://medium.com/@ashish_fagna/understanding-openai-gym-25c79c06eccb)
+
+## [Deep RL ]([https://medium.com/deep-math-machine-learning-ai/ch-13-deep-reinforcement-learning-deep-q-learning-and-policy-gradients-towards-agi-a2a0b611617e)
 
