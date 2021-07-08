@@ -3,6 +3,7 @@ import gym
 import matplotlib.pyplot as plt
 from math import inf
 import os
+# from google.colab import drive
 
 class Target_network:
 
@@ -169,8 +170,6 @@ def epsilon_greedy_action(Q,eps):
         return np.random.choice(np.flatnonzero(Q == Q.max()))
 
 env = gym.make('MsPacman-v0')
-observation = env.reset()
-state = observation.reshape(-1,1)
 
 target_network = Target_network()
 prediction_network = Prediction_network()
@@ -178,13 +177,17 @@ learning_rate = 0.0075
 gamma = 0.8
 c = 100 # not sure
 eps = 0.5
+# PARAMETER = []
 
-layer_dims = (observation.size,30,20,10,env.action_space.n)
+layer_dims = (env.reset().size,30,20,10,env.action_space.n)
 parameters = prediction_network.initialize_parameters_deep(layer_dims)
 target_parameters = parameters
 
 N_episode = 10000
 for i_episode in range(N_episode):
+    # print(i_episode)
+    observation = env.reset()
+    state = observation.reshape(-1,1)
     t = 0
     while(True):
         # print(t)
@@ -201,11 +204,22 @@ for i_episode in range(N_episode):
         cost = prediction_network.compute_cost(Q, target)
         grads =  prediction_network.L_model_backward(Q, target, caches)
         parameters = prediction_network.update_parameters(parameters, grads, learning_rate)
-        # print(parameters)
         t+=1
 
         if done:
             print("Episode finished after {} timesteps".format(t+1))
+            # print(parameters)
             break
+
+# for saving parameters in system
+output_dir = os.path.join(os.getcwd(), "output_pacman_dnn")
+if not os.path.exists(output_dir): os.mkdir(output_dir)
+os.chdir("output_pacman_dnn")
+file = open("parameter.txt","+w")
+file.write(str(parameters))
+file.close()
+
+# for saving parameters in drive
+
 
 env.close()
