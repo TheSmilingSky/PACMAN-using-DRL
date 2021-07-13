@@ -18,6 +18,7 @@
 * Start coding for the network! More details in the meet :)
 
 **July 13th**
+
 Alright guys! Time to complete things. Here's the promised explanation with some additional challenges for you!
 The key idea is just to extend the idea of learning in the gridworld environment to the pacman environment. The first step is to construct the state space. Now how does one do that? We can access the environment renders from the gym environment and use that directly as the state space representation. But now, in order to work with that, instead of tabulating the Q-values, we will have to approximate because of the large state space dimensionality. For this, we use a convolutional neural network that tried to estimate the Q values of the states, which are the different locations the agent can take in the game. A network like this is called a DQN (Deep Q-network) network. The notion of rewards is something that I think you can define by yourselves. This is all that one needs to do to have a basic learning agent. But in order to improve upon the results, there's a lot more that can be tried. 
 
