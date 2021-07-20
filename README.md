@@ -31,12 +31,12 @@ Once this was done we moved towards advanced algorithms read [these](https://git
 * Other codes are intermediate networks written during development
 
 ### How to use
-* [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) is the final code written by [Utkarsh Ranjan](https://github.com/geekyuttu). It needs to be run on colaboratory for its successful execution.
-      * It is necessary to mount gdrive and make folders buffers,models,cum_rewards and plots at path `'/content/drive/MyDrive/pacman_SOC_outputs/'`
-      * In[1] installs all the dependencies required to run the gym environment in colab which includes ROM for atari-game and Ipython display dependencies.
-      * Further this code is well commented the network used is NoisyNet_Dueling though there are other networks made while development
-      * In[2], In[3] are for Ipython display
-      * All hyperparameters are in In[94]
+* [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) is the final code written by [Utkarsh Ranjan](https://github.com/geekyuttu). It needs to be run on colaboratory for its successful execution.      
+* It is necessary to mount gdrive and make folders buffers,models,cum_rewards and plots at path `'/content/drive/MyDrive/pacman_SOC_outputs/'`
+* In[1] installs all the dependencies required to run the gym environment in colab which includes ROM for atari-game and Ipython display dependencies.
+* Further this code is well commented the network used is NoisyNet_Dueling though there are other networks made while development
+* In[2], In[3] are for Ipython display
+* All hyperparameters are in In[94]
 
 <!-- * [this](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/cart-pole.ipynb) code is written by [<insert name>](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/cart-pole.ipynb)
   <insert-description>
