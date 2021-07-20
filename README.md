@@ -3,6 +3,7 @@ This is a project mentored by `Gagan Jain` and `Utkarsh Agarwal` for WNCC's Seas
 
 ### Mentees
 * Utkarsh Ranjan - 200050147
+* Alakh Agrawal  - 200040018
 <!-- <insert-your-details> -->
 
 ### Motivation
