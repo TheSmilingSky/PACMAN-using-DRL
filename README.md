@@ -1,5 +1,9 @@
-# PACMAN-using-DRL
-This is a project mentored by Gagan Jain and Utkarsh Agarwal for WNCC's Seasons of Code 2021
+## PACMAN-using-DRL
+This is a project mentored by `Gagan Jain` and `Utkarsh Agarwal` for WNCC's Seasons of Code 2021
+
+### Mentees
+* Utkarsh Ranjan - 200050147
+<!-- <insert-your-details> -->
 
 ### Motivation
 Reinforcement Learning (RL) is a field of Artificial Intelligence where an agent learns by interacting with its environment and receiving a reward/penalty for its actions. RL has recently started receiving a lot more attention, owing to the famous victory by an RL agent over the world champion in the game of “Go”. This repo containsthe project aimed to implement RL algorithm on OpenAI's [`PACMAN`](https://gym.openai.com/envs/MsPacman-v0/) and get us familiar with the field.
@@ -22,12 +26,12 @@ Once this was done we moved towards advanced algorithms read [these](https://git
 * A folder of grid world assignment
 * A folder of gym-code (atari-games)
 * A folder of research-papers 
-* [code](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) with implementation of research paper
-* [code](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) used for training (an intermediate model to final code)
+* [Code](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) with implementation of research paper
+* [Code](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) used for training (an intermediate model to final code)
 * Other codes are intermediate networks written during development
 
 ### How to use
-* [this](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) is the final code written by [Utkarsh Ranjan](https://github.com/geekyuttu). It needs to be run on colaboratory for its successful execution.
+* [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_NoisyNet_n_step_PDD_DQN.ipynb) is the final code written by [Utkarsh Ranjan](https://github.com/geekyuttu). It needs to be run on colaboratory for its successful execution.
       * It is necessary to mount gdrive and make folders buffers,models,cum_rewards and plots at path `'/content/drive/MyDrive/pacman_SOC_outputs/'`
       * In[1] installs all the dependencies required to run the gym environment in colab which includes ROM for atari-game and Ipython display dependencies.
       * Further this code is well commented the network used is NoisyNet_Dueling though there are other networks made while development
@@ -41,13 +45,13 @@ Once this was done we moved towards advanced algorithms read [these](https://git
     <insert-description> -->
       
 ### Results
-[Ep1](https://drive.google.com/file/d/1jtVG4gNwlWYwmyd5j6CoE_dnyFER7z3a/view?usp=sharing/)
+Mp4 initially [Ep 1](https://drive.google.com/file/d/1jtVG4gNwlWYwmyd5j6CoE_dnyFER7z3a/view?usp=sharing/)
 
-[Ep 270](https://drive.google.com/file/d/1Ixl9qIoHsLYO3sbWxY4Jnf3jFbG-NcU6/view?usp=sharing/)
+Mp4 after training for [Ep 270](https://drive.google.com/file/d/1Ixl9qIoHsLYO3sbWxY4Jnf3jFbG-NcU6/view?usp=sharing/)
 
 It can be properly observed how the agent learned to avoid the ghost after she died in her first attempt. Further the agent learned to eat the fruit to repel the ghosts and earn points by eating them.
       
-[this](https://github.com/TheSmilingSky/PACMAN-using-DRL/tree/main/output-pacman/e-decay_DDQN) contains all the outputs- models, plots and videos.Plots are not continuous due to non-continuous training on colab.
+[This](https://github.com/TheSmilingSky/PACMAN-using-DRL/tree/main/output-pacman/e-decay_DDQN) contains all the outputs- models, plots and videos.Plots are not continuous due to non-continuous training on colab.
 
 
 
