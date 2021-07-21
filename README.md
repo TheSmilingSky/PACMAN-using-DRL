@@ -43,10 +43,11 @@ Once this was done we moved towards advanced algorithms read [these](https://git
 * All hyperparameters are in In[94]
 
 <!-- * [this](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/cart-pole.ipynb) code is written by [<insert name>](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/cart-pole.ipynb)
-  <insert-description>
+  <insert-description>-->
 
-* [this](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_dqn.ipynb) code is written by [<insert name>](<insert handle>)
-    <insert-description> -->
+* [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_dqn.ipynb) code is written by [Nikhil Kaniyeri](https://github.com/kaniyeri)
+* It runs directly on Visual Studio Code. Requires installation of gym and gym[atari] locally. 
+* You also need to download the ROM for Pacman and import it into the library. This is a one time process and is detailed [here.](https://github.com/openai/atari-py/#roms)
       
 ### Results
 Mp4 initially [Ep 1](https://drive.google.com/file/d/1jtVG4gNwlWYwmyd5j6CoE_dnyFER7z3a/view?usp=sharing/)
