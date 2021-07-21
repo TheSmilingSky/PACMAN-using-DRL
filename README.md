@@ -49,9 +49,11 @@ Once this was done we moved towards advanced algorithms read [these](https://git
 Mp4 initially [Ep 1](https://drive.google.com/file/d/1jtVG4gNwlWYwmyd5j6CoE_dnyFER7z3a/view?usp=sharing/)
 
 Mp4 after training for [Ep 270](https://drive.google.com/file/d/1Ixl9qIoHsLYO3sbWxY4Jnf3jFbG-NcU6/view?usp=sharing/)
-
 It can be properly observed how the agent learned to avoid the ghost after she died in her first attempt. Further the agent learned to eat the fruit to repel the ghosts and earn points by eating them.
-      
+
+Mp4 after training for [Ep 600](https://drive.google.com/file/d/19w4nzh_bPGFAx7cbQVjtJ4YaKhGJQmMA/view?usp=sharing)
+By now agent have started learing to avoid ghost (clear in this video) but have also learned not to avoid them when they are blue.
+
 [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/tree/main/output-pacman/e-decay_DDQN) contains all the outputs- models, plots and videos.Plots are not continuous due to non-continuous training on colab.
 
 
