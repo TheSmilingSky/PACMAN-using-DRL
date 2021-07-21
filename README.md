@@ -1,9 +1,12 @@
 ## PACMAN-using-DRL
 This is a project mentored by `Gagan Jain` and `Utkarsh Agarwal` for WNCC's Seasons of Code 2021
 
+<img src=https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/images/pacman.png align=middle></img>
+
 ### Mentees
 * Utkarsh Ranjan - 200050147
 * Alakh Agrawal  - 200040018
+* Nikhil Kaniyeri - 200070050
 <!-- <insert-your-details> -->
 
 ### Motivation
