@@ -48,7 +48,7 @@ Once this was done we moved towards advanced algorithms read [these](https://git
   <insert-description>-->
 
 
-* [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_dqn.ipynb) code is written by [Nikhil Kaniyeri](https://github.com/kaniyeri)
+* [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_dqn.ipynb) code is written by [Nikhil Kaniyeri.](https://github.com/kaniyeri)
 * It runs directly on Visual Studio Code. Requires installation of gym and gym[atari] locally. 
 * You also need to download the ROM for Pacman and import it into the library. This is a one time process and is detailed [here.](https://github.com/openai/atari-py/#roms)
       
