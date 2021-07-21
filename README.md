@@ -45,6 +45,7 @@ Once this was done we moved towards advanced algorithms read [these](https://git
 <!-- * [this](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/cart-pole.ipynb) code is written by [<insert name>](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/cart-pole.ipynb)
   <insert-description>-->
 
+
 * [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/blob/main/pacman_dqn.ipynb) code is written by [Nikhil Kaniyeri](https://github.com/kaniyeri)
 * It runs directly on Visual Studio Code. Requires installation of gym and gym[atari] locally. 
 * You also need to download the ROM for Pacman and import it into the library. This is a one time process and is detailed [here.](https://github.com/openai/atari-py/#roms)
@@ -56,7 +57,7 @@ Mp4 after training for [Ep 270](https://drive.google.com/file/d/1Ixl9qIoHsLYO3sb
 It can be properly observed how the agent learned to avoid the ghost after she died in her first attempt. Further the agent learned to eat the fruit to repel the ghosts and earn points by eating them.
 
 Mp4 after training for [Ep 600](https://drive.google.com/file/d/19w4nzh_bPGFAx7cbQVjtJ4YaKhGJQmMA/view?usp=sharing)
-By now agent have started learing to avoid ghost (clear in this video) but have also learned not to avoid them when they are blue.
+By now agent have started avoiding ghost (clear in this video) ,at the same time she has learned not to avoid them when they are blue.
 
 [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/tree/main/output-pacman/e-decay_DDQN) contains all the outputs- models, plots and videos.Plots are not continuous due to non-continuous training on colab.
 
