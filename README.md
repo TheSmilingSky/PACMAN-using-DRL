@@ -19,6 +19,7 @@ Once that was done we installed the [`gym`](https://gym.openai.com/) environment
 Once this was done we moved towards advanced algorithms read [these](https://github.com/TheSmilingSky/PACMAN-using-DRL/tree/main/research-papers) papers found some implementations online, did some hyperparameter search and started training the agent on colaboratory.
 
 ### What we learned
+* You can make impossible things possible if you learn from tons of your mistake and correct them on your way. #Reinforcement Learning
 * Implementation of standard python libraries like numpy, matplotlib, 
 * Fundamentals of RL algorithms, MDP,TD, Monte Carlo, Q learning, Sarsa Learning
 * Usage of ML frameworks for deepLearning like tensorflow, keras
