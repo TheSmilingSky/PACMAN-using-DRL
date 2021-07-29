@@ -63,5 +63,21 @@ By now agent have started avoiding ghost (clear in this video) ,at the same time
 
 [This](https://github.com/TheSmilingSky/PACMAN-using-DRL/tree/main/output-pacman/e-decay_DDQN) contains all the outputs- models, plots and videos.Plots are not continuous due to non-continuous training on colab.
 
-
-
+### Appendix
+* Gridworld reference - https://cs.stanford.edu/people/karpathy/reinforcejs/gridworld_td.html
+* OpenAI Gym in Colab - https://colab.research.google.com/github/jeffheaton/t81_558_deep_learning/blob/master/t81_558_class_12_01_ai_gym.ipynb#scrollTo=dnID4yguIeX7
+* Hyperparameters - https://paperswithcode.com/paper/rainbow-combining-improvements-in-deep/review/?hl=19878
+* https://medium.com/deep-math-machine-learning-ai/ch-13-deep-reinforcement-learning-deep-q-learning-and-policy-gradients-towards-agi-a2a0b611617e
+* Preprocessing Image - https://www.datahubbs.com/deepmind-dqn/
+* https://storage.googleapis.com/deepmind-media/dqn/DQNNaturePaper.pdf
+* https://acsweb.ucsd.edu/~wfedus/pdf/replay.pdf
+* https://towardsdatascience.com/4-ways-to-boost-experience-replay-999d9f17f7b6
+* https://towardsdatascience.com/deep-q-network-dqn-ii-b6bf911b6b2c
+* https://towardsdatascience.com/dueling-deep-q-networks-81ffab672751
+* https://paperswithcode.com/method/prioritized-experience-replay#
+* https://www.youtube.com/watch?v=MqZmwQoOXw4
+* https://github.com/the-computer-scientist/OpenAIGym/blob/master/PrioritizedExperienceReplayInOpenAIGym.ipynb
+* https://openai.com/blog/reinforcement-learning-with-prediction-based-rewards/
+* https://towardsdatascience.com/introduction-to-reinforcement-learning-rl-part-7-n-step-bootstrapping-6c3006a13265
+* https://github.com/Huixxi/TensorFlow2.0-for-Deep-Reinforcement-Learning/blob/master/05_multistep_td.py
+* https://github.com/Huixxi/TensorFlow2.0-for-Deep-Reinforcement-Learning/blob/d1c191e7bfbb44357a4066ced3b96fa8c847875a/07_noisynet.py#L309
